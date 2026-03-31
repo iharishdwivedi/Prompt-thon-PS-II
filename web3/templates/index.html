@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ASIS — Blockchain Audit</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+
+<!-- ── HERO ──────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">⛓ Stellar Testnet</div>
+    <h1>Autonomous Structural<br>Intelligence System</h1>
+    <p class="hero-sub">Blockchain-Anchored Structural Analysis</p>
+    <div class="hero-pills">
+      <span class="pill pill-a">🔐 Audit Certificate</span>
+      <span class="pill pill-b">🧱 Material Ledger</span>
+      <span class="pill pill-c">📋 Ownership Registry</span>
+    </div>
+  </div>
+</header>
+
+<!-- ── CONTRACT INFO BAR ─────────────────────────────────── -->
+<div class="contract-bar">
+  <div class="contract-bar-inner">
+    <span class="cb-label">Contract ID</span>
+    <span class="cb-value" id="contractId">{{ contract_id }}</span>
+    <a class="cb-link" id="explorerLink"
+       href="https://stellar.expert/explorer/testnet/contract/{{ contract_id }}"
+       target="_blank">View on Explorer ↗</a>
+  </div>
+</div>
+
+<!-- ── MAIN ───────────────────────────────────────────────── -->
+<main class="container">
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" data-tab="store">📤 Store Report</button>
+    <button class="tab" data-tab="verify">🔍 Verify Report</button>
+    <button class="tab" data-tab="ownership">👤 Ownership</button>
+    <button class="tab" data-tab="registry">📚 Registry</button>
+  </div>
+
+  <!-- ── TAB: STORE REPORT ─────────────────────────────── -->
+  <div class="tab-content active" id="tab-store">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">📤</span>
+        <div>
+          <h2>Store Analysis on Blockchain</h2>
+          <p>Anchor your AI structural report as an immutable on-chain record</p>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group full">
+          <label>Floor Plan Image (for hash generation)</label>
+          <input type="file" id="floorImage" accept="image/*" onchange="generateHash()"/>
+          <div class="hash-display" id="hashDisplay">
+            <span class="hash-label">SHA-256 Hash</span>
+            <span class="hash-value" id="hashValue">Upload image to generate hash</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Outer Walls Detected</label>
+          <input type="number" id="outerWalls" value="14" min="0"/>
+        </div>
+        <div class="form-group">
+          <label>Spine Walls Detected</label>
+          <input type="number" id="spineWalls" value="4" min="0"/>
+        </div>
+        <div class="form-group">
+          <label>Partition Walls</label>
+          <input type="number" id="partitions" value="12" min="0"/>
+        </div>
+
+        <div class="form-group">
+          <label>Top Material — Outer Walls</label>
+          <input type="text" id="matOuter" value="Fly Ash Brick"/>
+        </div>
+        <div class="form-group">
+          <label>Top Material — Spine Walls</label>
+          <input type="text" id="matSpine" value="Hollow Concrete Block"/>
+        </div>
+        <div class="form-group">
+          <label>Top Material — Partitions</label>
+          <input type="text" id="matPart" value="AAC Blocks"/>
+        </div>
+        <div class="form-group">
+          <label>Top Material — Slab</label>
+          <input type="text" id="matSlab" value="Precast Concrete Panel"/>
+        </div>
+        <div class="form-group">
+          <label>Top Material — Columns</label>
+          <input type="text" id="matCol" value="TMT Steel Bars"/>
+        </div>
+
+        <div class="form-group full">
+          <label>AI Report Summary (first 200 chars)</label>
+          <textarea id="reportSummary" rows="3" placeholder="Paste the AI-generated structural report summary here...">Floor plan 46.9m x 33.5m. 18 load-bearing walls, 12 partitions. Fly Ash Brick recommended for outer walls. TMT Steel for columns. Structurally compliant.</textarea>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" onclick="storeReport()">
+        ⛓ Anchor on Stellar Blockchain
+      </button>
+
+      <div class="result-box" id="storeResult" style="display:none"></div>
+    </div>
+  </div>
+
+  <!-- ── TAB: VERIFY REPORT ────────────────────────────── -->
+  <div class="tab-content" id="tab-verify">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🔍</span>
+        <div>
+          <h2>Verify Audit Certificate</h2>
+          <p>Feature A — Retrieve and verify any stored structural report from the blockchain</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Floor Plan Hash</label>
+        <div class="input-row">
+          <input type="text" id="verifyHash" placeholder="Enter 32-char floor plan hash..."/>
+          <button class="btn btn-secondary" onclick="verifyReport()">🔍 Verify</button>
+        </div>
+      </div>
+
+      <div class="result-box" id="verifyResult" style="display:none"></div>
+    </div>
+  </div>
+
+  <!-- ── TAB: OWNERSHIP ────────────────────────────────── -->
+  <div class="tab-content" id="tab-ownership">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">👤</span>
+        <div>
+          <h2>Floor Plan Ownership Registry</h2>
+          <p>Feature C — Verify who registered a floor plan design on-chain</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Floor Plan Hash</label>
+        <div class="input-row">
+          <input type="text" id="ownerHash" placeholder="Enter floor plan hash..."/>
+          <button class="btn btn-secondary" onclick="checkOwner()">👤 Check Owner</button>
+        </div>
+      </div>
+
+      <div class="result-box" id="ownerResult" style="display:none"></div>
+    </div>
+  </div>
+
+  <!-- ── TAB: REGISTRY ─────────────────────────────────── -->
+  <div class="tab-content" id="tab-registry">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">📚</span>
+        <div>
+          <h2>On-Chain Report Registry</h2>
+          <p>Feature B — All material procurement records anchored on Stellar</p>
+        </div>
+      </div>
+
+      <div class="registry-stats" id="registryStats">
+        <div class="stat-card">
+          <div class="stat-value" id="reportCount">—</div>
+          <div class="stat-label">Reports On-Chain</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">Testnet</div>
+          <div class="stat-label">Network</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">Soroban</div>
+          <div class="stat-label">Contract Type</div>
+        </div>
+      </div>
+
+      <button class="btn btn-secondary" onclick="loadRegistry()" style="margin-bottom:20px">
+        🔄 Load All Hashes
+      </button>
+
+      <div class="result-box" id="registryResult" style="display:none"></div>
+    </div>
+  </div>
+
+  <!-- ── HOW IT WORKS ───────────────────────────────────── -->
+  <div class="how-it-works">
+    <h2>How Blockchain Integrates with the Pipeline</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Upload Floor Plan</strong>
+          <span>SHA-256 hash generated from image bytes — unique fingerprint</span>
+        </div>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>AI Pipeline Runs</strong>
+          <span>OCR → Vision → 3D Model → Material Analysis → Gemini Report</span>
+        </div>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Anchor on Stellar</strong>
+          <span>Report + materials + ownership stored immutably on Soroban contract</span>
+        </div>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <strong>Verify Anytime</strong>
+          <span>Anyone can verify the report was AI-generated and untampered</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <p>Autonomous Structural Intelligence System · Built on Stellar Soroban</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

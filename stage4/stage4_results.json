@@ -1,0 +1,222 @@
+{
+  "load_bearing_outer": [
+    {
+      "name": "Fly Ash Brick",
+      "cost_raw": "Low",
+      "strength_raw": "Medium\u2013High",
+      "durability_raw": "High",
+      "best_use": "General walling",
+      "cost": 1,
+      "strength": 2,
+      "durability": 3,
+      "tradeoff_score": 5.0,
+      "rank": 1,
+      "explanation": "Ranked #1 with tradeoff score 5.0. Strength=Medium\u2013High (weight 0.55), Durability=High (weight 0.15), Cost=Low (weight 0.3). Numerator (performance) = 1.55, Denominator (cost penalty) = 0.3. This floor plan has 14 outer load-bearing walls forming the structural perimeter.",
+      "weight_rationale": "Outer walls carry vertical + lateral loads. Strength dominates (0.55). Cost is secondary \u2014 structural integrity cannot be compromised."
+    },
+    {
+      "name": "Hollow Concrete Block",
+      "cost_raw": "Low\u2013Medium",
+      "strength_raw": "Medium",
+      "durability_raw": "Medium",
+      "best_use": "Non-structural walls",
+      "cost": 1,
+      "strength": 2,
+      "durability": 2,
+      "tradeoff_score": 4.5161,
+      "rank": 2,
+      "explanation": "Ranked #2 with tradeoff score 4.5161. Strength=Medium (weight 0.55), Durability=Medium (weight 0.15), Cost=Low\u2013Medium (weight 0.3). Numerator (performance) = 1.4, Denominator (cost penalty) = 0.3. This floor plan has 14 outer load-bearing walls forming the structural perimeter.",
+      "weight_rationale": "Outer walls carry vertical + lateral loads. Strength dominates (0.55). Cost is secondary \u2014 structural integrity cannot be compromised."
+    },
+    {
+      "name": "Precast Concrete Panel",
+      "cost_raw": "Medium\u2013High",
+      "strength_raw": "High",
+      "durability_raw": "Very High",
+      "best_use": "Structural walls and slabs",
+      "cost": 2,
+      "strength": 3,
+      "durability": 3,
+      "tradeoff_score": 3.4426,
+      "rank": 3,
+      "explanation": "Ranked #3 with tradeoff score 3.4426. Strength=High (weight 0.55), Durability=Very High (weight 0.15), Cost=Medium\u2013High (weight 0.3). Numerator (performance) = 2.1, Denominator (cost penalty) = 0.6. This floor plan has 14 outer load-bearing walls forming the structural perimeter.",
+      "weight_rationale": "Outer walls carry vertical + lateral loads. Strength dominates (0.55). Cost is secondary \u2014 structural integrity cannot be compromised."
+    }
+  ],
+  "load_bearing_spine": [
+    {
+      "name": "Hollow Concrete Block",
+      "cost_raw": "Low\u2013Medium",
+      "strength_raw": "Medium",
+      "durability_raw": "Medium",
+      "best_use": "Non-structural walls",
+      "cost": 1,
+      "strength": 2,
+      "durability": 2,
+      "tradeoff_score": 5.7692,
+      "rank": 1,
+      "explanation": "Ranked #1 with tradeoff score 5.7692. Strength=Medium (weight 0.5), Durability=Medium (weight 0.25), Cost=Low\u2013Medium (weight 0.25). Numerator (performance) = 1.5, Denominator (cost penalty) = 0.25. This floor plan has 4 spine walls carrying internal floor loads across spans.",
+      "weight_rationale": "Spine walls carry floor loads across spans. Strength (0.50) and durability (0.25) are both critical for long-term performance."
+    },
+    {
+      "name": "Precast Concrete Panel",
+      "cost_raw": "Medium\u2013High",
+      "strength_raw": "High",
+      "durability_raw": "Very High",
+      "best_use": "Structural walls and slabs",
+      "cost": 2,
+      "strength": 3,
+      "durability": 3,
+      "tradeoff_score": 4.4118,
+      "rank": 2,
+      "explanation": "Ranked #2 with tradeoff score 4.4118. Strength=High (weight 0.5), Durability=Very High (weight 0.25), Cost=Medium\u2013High (weight 0.25). Numerator (performance) = 2.25, Denominator (cost penalty) = 0.5. This floor plan has 4 spine walls carrying internal floor loads across spans.",
+      "weight_rationale": "Spine walls carry floor loads across spans. Strength (0.50) and durability (0.25) are both critical for long-term performance."
+    },
+    {
+      "name": "Clay Brick (Machine-made)",
+      "cost_raw": "Medium",
+      "strength_raw": "High",
+      "durability_raw": "High",
+      "best_use": "External load-bearing walls",
+      "cost": 2,
+      "strength": 3,
+      "durability": 3,
+      "tradeoff_score": 4.4118,
+      "rank": 3,
+      "explanation": "Ranked #3 with tradeoff score 4.4118. Strength=High (weight 0.5), Durability=High (weight 0.25), Cost=Medium (weight 0.25). Numerator (performance) = 2.25, Denominator (cost penalty) = 0.5. This floor plan has 4 spine walls carrying internal floor loads across spans.",
+      "weight_rationale": "Spine walls carry floor loads across spans. Strength (0.50) and durability (0.25) are both critical for long-term performance."
+    }
+  ],
+  "partition": [
+    {
+      "name": "AAC Blocks",
+      "cost_raw": "Low",
+      "strength_raw": "Medium",
+      "durability_raw": "High",
+      "best_use": "Partition walls",
+      "cost": 1,
+      "strength": 2,
+      "durability": 3,
+      "tradeoff_score": 1.6393,
+      "rank": 1,
+      "explanation": "Ranked #1 with tradeoff score 1.6393. Strength=Medium (weight 0.2), Durability=High (weight 0.2), Cost=Low (weight 0.6). Numerator (performance) = 1.0, Denominator (cost penalty) = 0.6. This floor plan has 12 partition walls \u2014 non-structural dividers where cost efficiency matters most.",
+      "weight_rationale": "Partitions are non-structural dividers. Economy drives selection (cost=0.60). Strength and durability are minor requirements."
+    },
+    {
+      "name": "Fly Ash Brick",
+      "cost_raw": "Low",
+      "strength_raw": "Medium\u2013High",
+      "durability_raw": "High",
+      "best_use": "General walling",
+      "cost": 1,
+      "strength": 2,
+      "durability": 3,
+      "tradeoff_score": 1.6393,
+      "rank": 2,
+      "explanation": "Ranked #2 with tradeoff score 1.6393. Strength=Medium\u2013High (weight 0.2), Durability=High (weight 0.2), Cost=Low (weight 0.6). Numerator (performance) = 1.0, Denominator (cost penalty) = 0.6. This floor plan has 12 partition walls \u2014 non-structural dividers where cost efficiency matters most.",
+      "weight_rationale": "Partitions are non-structural dividers. Economy drives selection (cost=0.60). Strength and durability are minor requirements."
+    },
+    {
+      "name": "Hollow Concrete Block",
+      "cost_raw": "Low\u2013Medium",
+      "strength_raw": "Medium",
+      "durability_raw": "Medium",
+      "best_use": "Non-structural walls",
+      "cost": 1,
+      "strength": 2,
+      "durability": 2,
+      "tradeoff_score": 1.3115,
+      "rank": 3,
+      "explanation": "Ranked #3 with tradeoff score 1.3115. Strength=Medium (weight 0.2), Durability=Medium (weight 0.2), Cost=Low\u2013Medium (weight 0.6). Numerator (performance) = 0.8, Denominator (cost penalty) = 0.6. This floor plan has 12 partition walls \u2014 non-structural dividers where cost efficiency matters most.",
+      "weight_rationale": "Partitions are non-structural dividers. Economy drives selection (cost=0.60). Strength and durability are minor requirements."
+    }
+  ],
+  "slab": [
+    {
+      "name": "Precast Concrete Panel",
+      "cost_raw": "Medium\u2013High",
+      "strength_raw": "High",
+      "durability_raw": "Very High",
+      "best_use": "Structural walls and slabs",
+      "cost": 2,
+      "strength": 3,
+      "durability": 3,
+      "tradeoff_score": 4.4118,
+      "rank": 1,
+      "explanation": "Ranked #1 with tradeoff score 4.4118. Strength=High (weight 0.4), Durability=Very High (weight 0.35), Cost=Medium\u2013High (weight 0.25). Numerator (performance) = 2.25, Denominator (cost penalty) = 0.5. Floor slab spans the full building footprint and faces cyclic loading and moisture.",
+      "weight_rationale": "Slabs face cyclic loading and moisture exposure. Durability (0.35) and strength (0.40) both matter. Cost is least important."
+    },
+    {
+      "name": "TMT Steel Bars",
+      "cost_raw": "Medium",
+      "strength_raw": "Very High",
+      "durability_raw": "Very High",
+      "best_use": "Reinforcement in slabs and columns",
+      "cost": 2,
+      "strength": 3,
+      "durability": 3,
+      "tradeoff_score": 4.4118,
+      "rank": 2,
+      "explanation": "Ranked #2 with tradeoff score 4.4118. Strength=Very High (weight 0.4), Durability=Very High (weight 0.35), Cost=Medium (weight 0.25). Numerator (performance) = 2.25, Denominator (cost penalty) = 0.5. Floor slab spans the full building footprint and faces cyclic loading and moisture.",
+      "weight_rationale": "Slabs face cyclic loading and moisture exposure. Durability (0.35) and strength (0.40) both matter. Cost is least important."
+    },
+    {
+      "name": "Vitrified Tiles",
+      "cost_raw": "Medium\u2013High",
+      "strength_raw": "High",
+      "durability_raw": "Very High",
+      "best_use": "Premium flooring",
+      "cost": 2,
+      "strength": 3,
+      "durability": 3,
+      "tradeoff_score": 4.4118,
+      "rank": 3,
+      "explanation": "Ranked #3 with tradeoff score 4.4118. Strength=High (weight 0.4), Durability=Very High (weight 0.35), Cost=Medium\u2013High (weight 0.25). Numerator (performance) = 2.25, Denominator (cost penalty) = 0.5. Floor slab spans the full building footprint and faces cyclic loading and moisture.",
+      "weight_rationale": "Slabs face cyclic loading and moisture exposure. Durability (0.35) and strength (0.40) both matter. Cost is least important."
+    }
+  ],
+  "column": [
+    {
+      "name": "TMT Steel Bars",
+      "cost_raw": "Medium",
+      "strength_raw": "Very High",
+      "durability_raw": "Very High",
+      "best_use": "Reinforcement in slabs and columns",
+      "cost": 2,
+      "strength": 3,
+      "durability": 3,
+      "tradeoff_score": 8.2258,
+      "rank": 1,
+      "explanation": "Ranked #1 with tradeoff score 8.2258. Strength=Very High (weight 0.65), Durability=Very High (weight 0.2), Cost=Medium (weight 0.15). Numerator (performance) = 2.55, Denominator (cost penalty) = 0.3. Columns are point-load elements \u2014 failure of one column can cascade to floor collapse.",
+      "weight_rationale": "Columns are point-load elements \u2014 a failure collapses the floor. Strength is everything (0.65). Cost is nearly irrelevant."
+    },
+    {
+      "name": "RCC (Reinforced Concrete)",
+      "cost_raw": "High",
+      "strength_raw": "Very High",
+      "durability_raw": "Very High",
+      "best_use": "Columns and slabs",
+      "cost": 3,
+      "strength": 3,
+      "durability": 3,
+      "tradeoff_score": 5.5435,
+      "rank": 2,
+      "explanation": "Ranked #2 with tradeoff score 5.5435. Strength=Very High (weight 0.65), Durability=Very High (weight 0.2), Cost=High (weight 0.15). Numerator (performance) = 2.55, Denominator (cost penalty) = 0.45. Columns are point-load elements \u2014 failure of one column can cascade to floor collapse.",
+      "weight_rationale": "Columns are point-load elements \u2014 a failure collapses the floor. Strength is everything (0.65). Cost is nearly irrelevant."
+    },
+    {
+      "name": "Steel Frame",
+      "cost_raw": "High",
+      "strength_raw": "Very High",
+      "durability_raw": "Very High",
+      "best_use": "Long spans (>5m)",
+      "cost": 3,
+      "strength": 3,
+      "durability": 3,
+      "tradeoff_score": 5.5435,
+      "rank": 3,
+      "explanation": "Ranked #3 with tradeoff score 5.5435. Strength=Very High (weight 0.65), Durability=Very High (weight 0.2), Cost=High (weight 0.15). Numerator (performance) = 2.55, Denominator (cost penalty) = 0.45. Columns are point-load elements \u2014 failure of one column can cascade to floor collapse.",
+      "weight_rationale": "Columns are point-load elements \u2014 a failure collapses the floor. Strength is everything (0.65). Cost is nearly irrelevant."
+    }
+  ]
+}

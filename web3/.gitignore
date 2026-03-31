@@ -1,0 +1,8 @@
+target/
+__pycache__/
+*.pyc
+.env
+*.egg-info/
+venv/
+.venv/
+Cargo.lock

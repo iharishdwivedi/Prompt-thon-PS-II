@@ -1,0 +1,16 @@
+{
+  "name": "asis-blockchain-audit",
+  "version": "1.0.0",
+  "description": "Autonomous Structural Intelligence System — Stellar Blockchain Audit Layer",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "python app.py",
+    "build": "echo 'Flask serves static files directly — no build step needed'"
+  },
+  "keywords": ["stellar", "soroban", "blockchain", "structural-analysis", "flask"],
+  "author": "ASIS Project",
+  "license": "MIT",
+  "dependencies": {
+    "@stellar/stellar-sdk": "^12.0.0"
+  }
+}
